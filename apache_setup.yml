@@ -1,0 +1,6 @@
+---
+- name: install and configure Apache Web Server
+  hosts: "{{ tower_webhook_payload.pull_request.base.ref | default ('dev') }}"
+  become: true
+  roles:
+  - role: apache

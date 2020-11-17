@@ -1,0 +1,9 @@
+tomcat_version: 8.5.23
+tomcat_users:
+  - username: "tomcat"
+    password: "TCP@$$w0rd"
+    roles: "tomcat,admin,admin-gui,admin-script,manager,manager-gui"
+  - username: "devuser"
+    password: "DEVuserP4$$"
+    roles: "tomcat"
+apache_test_message: Hello World Welcome to the DEV Group

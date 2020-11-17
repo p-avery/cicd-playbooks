@@ -1,0 +1,9 @@
+apache_test_message: Hello World Welcome to the QA Group
+tomcat_version: 8.5.23
+tomcat_users:
+  - username: "tomcat"
+    password: "TCP@$$w0rd"
+    roles: "tomcat,admin,admin-gui,admin-script,manager,manager-gui"
+  - username: "qauser"
+    password: "QAuserP4$$"
+    roles: "tomcat"

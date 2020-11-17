@@ -1,3 +1,10 @@
-- src: https://github.com/p-avery/ansible-jenkins.git
+---
+- name: tomcat-ansible-role
+  src: https://github.com/p-avery/apache-tomcat.git
   scm: git
-  name: jenkins-pipeline
+- name: jenkins-pipeline
+  src: https://github.com/p-avery/ansible-jenkins.git
+  scm: git
+- name: apache
+  scm: git
+  src: https://github.com/p-avery/ansible-apache.git

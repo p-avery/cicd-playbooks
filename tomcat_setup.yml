@@ -1,6 +1,6 @@
 ---
 - name: Install Apache Tomcat
-  hosts: "{{ tower_webhook_payload.base.ref | default ('dev') }}"
+  hosts: "{{ tower_webhook_payload.pull_request.base.ref | default ('dev') }}"
   
   roles:
     - role: tomcat-ansible-role

@@ -1,0 +1,10 @@
+tomcat_version: 8.5.23
+tomcat_permissions_production: True
+tomcat_users:
+  - username: "produser"
+    password: "PRuserP4$$"
+    roles: "tomcat"
+  - username: "prodadmin"
+    password: "TCP@$$w0rd"
+    roles: "tomcat,admin,admin-gui,admin-script,manager,manager-gui"  
+apache_test_message: Hello World Welcome to the PROD Group

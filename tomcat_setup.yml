@@ -4,4 +4,4 @@
   
   roles:
     - role: tomcat-ansible-role
-      when: tower_webhook_payload.action not 'closed'
+      when: tower_webhook_payload.action != 'closed'

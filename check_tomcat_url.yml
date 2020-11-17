@@ -1,0 +1,16 @@
+---
+- name: check url is up
+  hosts: all
+  gather_facts: false
+  vars:
+    tomcat_webapp: "/examples/servlets/servlet/HelloWorldExample"
+  tasks:
+  - name: ensure url is responding 
+    uri:
+      url: "http://{{inventory_hostname}}:{{url_port | default('8080')}}{{ tomcat_webapp| default (omit) }}"
+      return_content: true
+    register: url_response
+
+  - name: show url contents
+    debug:
+      var: url_response.content

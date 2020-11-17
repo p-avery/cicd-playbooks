@@ -1,0 +1,6 @@
+---
+- name: Install Apache Tomcat
+  hosts: dev,qa,prod
+  
+  roles:
+    - role: tomcat-ansible-role

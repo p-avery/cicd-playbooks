@@ -1,0 +1,30 @@
+---
+- name: Uninstall Apache Web Server
+  hosts: web
+  become: true
+  tasks:
+  - name: (uninstall) Check if Apache service is installed
+    stat:
+      path: /usr/lib/systemd/system/httpd.service
+    register: service_installed
+
+  - name: stop apache service
+    service:
+      name: httpd
+      state: stopped
+      enabled: false
+    when: service_installed.stat.exists
+
+  - name: uninstall apache
+    yum:
+      name: httpd
+      state: absent
+
+  - name: Remove website index.html
+    file:
+      path: /var/www/html/index.html
+      state: absent
+
+  - name: Show playbook outcome
+    debug:
+      msg: "Apache has been uninstalled on {{ ansible_fqdn }}"
